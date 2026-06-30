@@ -46,7 +46,8 @@ body {
 }
 
 main {
-    margin: clamp(1rem, -1.154rem + 9.846vw, 5rem);
+    margin-block: clamp(1rem, -1.154rem + 9.846vw, 10rem);
+    margin-inline: clamp(1rem, 5vw, 10rem);
     padding: 3rem 2rem;
 
     background: rgba(0, 0, 0, .39);
@@ -82,9 +83,9 @@ h1 {
     font-size: 75px;
     font-weight: 400;
 
-    color: rgba(255,255,255,.7);
+    color: rgba(255, 255, 255, .7);
 
-    border-bottom: 1px solid rgba(255,255,255,.7);
+    border-bottom: 1px solid rgba(255, 255, 255, .7);
 }
 
 h3 {
@@ -94,17 +95,17 @@ h3 {
     font-weight: 700;
     text-transform: uppercase;
 
-    color: rgba(255,255,255,.7);
+    color: rgba(255, 255, 255, .7);
 }
 
 p {
     line-height: 1.8;
-    color: rgba(255,255,255,.82);
+    color: rgba(255, 255, 255, .82);
     margin-bottom: 1rem;
 }
 
 a {
-    color: rgba(255,255,255,.8);
+    color: rgba(255, 255, 255, .8);
     transition: .2s;
 }
 
@@ -130,7 +131,7 @@ ul {
     font-weight: 700;
     text-transform: uppercase;
 
-    color: rgba(255,255,255,.7);
+    color: rgba(255, 255, 255, .7);
 }
 
 .section-title::after {
@@ -143,7 +144,7 @@ ul {
     width: 100%;
     height: 1px;
 
-    background: rgba(255,255,255,.7);
+    background: rgba(255, 255, 255, .7);
 }
 
 .section-title::before {
@@ -156,7 +157,7 @@ ul {
     width: 1px;
     height: 300px;
 
-    background: rgba(255,255,255,.7);
+    background: rgba(255, 255, 255, .7);
 }
 
 
@@ -170,4 +171,42 @@ ul {
 
 .reflection {
     margin-top: 3rem;
+}
+
+
+.site-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 5rem;
+    /* background: #4e4e4e;          */
+    backdrop-filter: blur(1px);
+}
+
+.site-header .logo img {
+    height: 5vh;
+}
+
+/* NAV LINKS */
+.main-nav {
+    display: flex;
+    gap: 2rem;
+    /* space between links */
+}
+
+.main-nav a {
+    color: rgba(255, 255, 255, 0.7);
+    font-family: "KumbhSans", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 0.08em;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.main-nav a:hover,
+.main-nav a:focus {
+    color: #ffffff;
+    transform: translateY(-1px);
 }

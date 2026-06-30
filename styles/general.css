@@ -1,3 +1,7 @@
+/* ==========================================================================
+   Fonts
+   ========================================================================== */
+
 @font-face {
     font-family: "Gotu";
     src: url("../assets/fonts/Gotu-Regular.ttf");
@@ -8,14 +12,51 @@
     src: url("../assets/fonts/KumbhSans-VariableFont_YOPQ\,wght.ttf");
 }
 
-* {
-    font-family: "Gotu", Helvetica;
 
-    color: white;
+/* ==========================================================================
+   Reset
+   ========================================================================== */
+
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100vw;
+    overflow-x: hidden;
+
+    font-family: "Gotu", Helvetica, sans-serif;
+    color: white;
+
+    background-image: url("/assets/images/blog-background.jpg");
+    background-size: cover;
+}
+
+main {
+    margin: clamp(1rem, -1.154rem + 9.846vw, 5rem);
+    padding: 3rem 2rem;
+
+    background: rgba(0, 0, 0, .39);
+    backdrop-filter: blur(10px);
+}
+
+
+/* ==========================================================================
+   Typography
+   ========================================================================== */
 
 h1,
 h2,
@@ -23,6 +64,110 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: "KumbhSans", Arial;
+    font-family: "KumbhSans", Arial, sans-serif;
 }
 
+h1 {
+    display: inline-block;
+    width: 100%;
+
+    position: relative;
+    right: -4rem;
+
+    padding-bottom: 2rem;
+
+    text-align: end;
+    text-transform: uppercase;
+
+    font-size: 75px;
+    font-weight: 400;
+
+    color: rgba(255,255,255,.7);
+
+    border-bottom: 1px solid rgba(255,255,255,.7);
+}
+
+h3 {
+    margin: 1rem 0;
+
+    font-size: 25px;
+    font-weight: 700;
+    text-transform: uppercase;
+
+    color: rgba(255,255,255,.7);
+}
+
+p {
+    line-height: 1.8;
+    color: rgba(255,255,255,.82);
+    margin-bottom: 1rem;
+}
+
+a {
+    color: rgba(255,255,255,.8);
+    transition: .2s;
+}
+
+a:hover {
+    color: white;
+}
+
+ul {
+    padding-left: 1.5rem;
+}
+
+
+/* ==========================================================================
+   Shared Section Heading
+   ========================================================================== */
+
+.section-title {
+    margin: 7rem 0 3rem;
+
+    position: relative;
+
+    font-size: clamp(2.4rem, 5vw, 3.2rem);
+    font-weight: 700;
+    text-transform: uppercase;
+
+    color: rgba(255,255,255,.7);
+}
+
+.section-title::after {
+    content: "";
+
+    position: absolute;
+    left: -30%;
+    bottom: -1rem;
+
+    width: 100%;
+    height: 1px;
+
+    background: rgba(255,255,255,.7);
+}
+
+.section-title::before {
+    content: "";
+
+    position: absolute;
+    left: -3rem;
+    top: -.5rem;
+
+    width: 1px;
+    height: 300px;
+
+    background: rgba(255,255,255,.7);
+}
+
+
+/* ==========================================================================
+   Utility classes
+   ========================================================================== */
+
+.full {
+    grid-column: 1 / -1;
+}
+
+.reflection {
+    margin-top: 3rem;
+}

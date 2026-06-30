@@ -113,7 +113,8 @@ a:hover {
     color: white;
 }
 
-ul, ol {
+ul,
+ol {
     padding-left: 1.5rem;
 }
 
@@ -218,6 +219,83 @@ ul, ol {
 .main-nav a.active,
 .main-nav a[aria-current="page"] {
     color: #ffffff;
-    border-bottom-color: #ffffff; /* underline to show it's active */
+    border-bottom-color: #ffffff;
+    /* underline to show it's active */
     font-weight: 600;
+}
+
+.link-button {
+    display: inline-flex;
+    padding: 4px 19px;
+    justify-content: center;
+    align-items: center;
+    gap: 3.258px;
+
+    border-right: 1.629px solid rgba(255, 255, 255, 0.60);
+    border-left: 1.629px solid rgba(255, 255, 255, 0.60);
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.60) 0%, rgba(255, 255, 255, 0.24) 3.85%, rgba(255, 255, 255, 0.00) 51.92%, rgba(255, 255, 255, 0.24) 96.15%, rgba(255, 255, 255, 0.60) 100%), radial-gradient(50% 50% at 50% 50%, rgba(226, 226, 226, 0.06) 1.92%, rgba(221, 221, 221, 0.18) 71.63%, rgba(211, 211, 211, 0.23) 88.46%);
+
+
+    color: #FFF;
+    font-family: "KumbhSans";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+
+.project-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1rem;
+    margin-block: 2rem;
+}
+
+
+.project-links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    margin-block: 2rem;
+}
+
+.link-button {
+    display: inline-flex;
+    padding: 4px 19px;
+    justify-content: center;
+    align-items: center;
+    gap: 3.258px;
+
+    border-right: 1.629px solid rgba(255, 255, 255, 0.60);
+    border-left: 1.629px solid rgba(255, 255, 255, 0.60);
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.60) 0%, rgba(255, 255, 255, 0.24) 3.85%, rgba(255, 255, 255, 0.00) 51.92%, rgba(255, 255, 255, 0.24) 96.15%, rgba(255, 255, 255, 0.60) 100%), radial-gradient(50% 50% at 50% 50%, rgba(226, 226, 226, 0.06) 1.92%, rgba(221, 221, 221, 0.18) 71.63%, rgba(211, 211, 211, 0.23) 88.46%);
+
+    color: #FFF;
+    font-family: "KumbhSans";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+    text-decoration: none;      /* remove basic link styling */
+    cursor: pointer;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;   /* smooth hover animation */
+}
+
+/* Arrow after the text */
+.link-button::after {
+    content: "→";
+    font-size: 18px;
+}
+
+/* Hover / keyboard focus state */
+.link-button:hover,
+.link-button:focus-visible {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.35);
 }

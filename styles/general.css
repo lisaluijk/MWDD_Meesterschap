@@ -83,7 +83,7 @@
         font-family: var(--font-base);
         color: var(--color-text);
 
-        background-image: url("MWDD_Meesterschap/assets/images/blog-background.jpg");
+        background-image: url("../assets/images/blog-background.jpg");
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center top;

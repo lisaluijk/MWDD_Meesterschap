@@ -1,0 +1,81 @@
+/* ---------- Layout ---------- */
+
+body {
+    width: 100vw;
+    overflow-x: hidden;
+
+    background-image: url("/assets/images/blog-background.jpg");
+    background-size: cover;
+}
+
+main {
+    margin: clamp(1rem, -1.154rem + 9.846vw, 5rem);
+    padding: 3rem 2rem;
+
+    background: rgba(0, 0, 0, 0.39);
+    backdrop-filter: blur(10px);
+}
+
+.project {
+    margin: 6rem 0;
+    padding-left: 3rem;
+
+    border-left: 2px solid rgba(255,255,255,.2);
+}
+
+.project h2 {
+    margin-bottom: 2rem;
+}
+
+.project h3 {
+    margin: 2rem 0 1rem;
+}
+
+.project p {
+    max-width: 70ch;
+    line-height: 1.8;
+    color: rgba(255,255,255,.82);
+}
+
+.project-links {
+    margin: 2rem 0;
+}
+
+.project-links p {
+    margin-bottom: .5rem;
+}
+
+.project-links a {
+    color: rgba(255,255,255,.75);
+    text-decoration-thickness: 1px;
+    transition: .2s;
+}
+
+.project-links a:hover {
+    color: white;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+
+    margin: 3rem 0;
+}
+
+.gallery img {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+
+    object-fit: cover;
+
+    border: 1px solid rgba(255,255,255,.2);
+}
+
+.reflection {
+    margin-top: 3rem;
+}
+
+p {
+    margin-bottom: 1rem;
+}

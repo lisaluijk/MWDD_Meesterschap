@@ -1,0 +1,227 @@
+
+/* ---------- Layout ---------- */
+
+body {
+    width: 100vw;
+    overflow-x: hidden;
+
+    background-image: url("/assets/images/blog-background.jpg");
+    background-size: cover;
+}
+
+main {
+    margin: clamp(1rem, -1.154rem + 9.846vw, 5rem);
+    padding: 3rem 2rem;
+
+    background: rgba(0, 0, 0, 0.39);
+    backdrop-filter: blur(10px);
+}
+
+
+/* ---------- Page Heading ---------- */
+
+h1 {
+    display: inline-block;
+    width: 100%;
+
+    position: relative;
+    right: -4rem;
+
+    padding-bottom: 2rem;
+
+    text-align: end;
+    text-transform: uppercase;
+
+    font-size: 75px;
+    font-weight: 400;
+
+    color: rgba(255, 255, 255, .7);
+
+    border-bottom: 1px solid rgba(255,255,255,.7);
+}
+
+
+/* ---------- Week ---------- */
+
+.week {
+    padding: 4rem 0;
+}
+
+.weekly-nerds details {
+    margin: 3rem 0;
+    padding-left: 2rem;
+
+    border-left: 2px solid rgba(255,255,255,.25);
+    transition: .3s ease;
+}
+
+.weekly-nerds details[open] {
+    border-left-color: rgba(255,255,255,.7);
+}
+
+
+/* ---------- Summary ---------- */
+
+summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    cursor: pointer;
+    list-style: none;
+    user-select: none;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+
+/* ---------- Date ---------- */
+
+.date {
+    display: inline-block;
+    margin-bottom: 1rem;
+
+    font-family: "KumbhSans";
+    font-size: .8rem;
+    letter-spacing: .25rem;
+    text-transform: uppercase;
+
+    color: rgba(255,255,255,.55);
+}
+
+
+/* ---------- Headings ---------- */
+
+h2 {
+    margin: 0;
+
+    position: relative;
+
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    text-transform: uppercase;
+
+    color: rgba(255,255,255,.7);
+}
+
+h2::after {
+    content: "";
+
+    position: absolute;
+    left: -30%;
+    bottom: -1rem;
+
+    width: 100%;
+    height: 1px;
+
+    background: rgba(255,255,255,.7);
+}
+
+h3 {
+    margin: 1rem 0;
+
+    font-size: 25px;
+    font-weight: 700;
+    text-transform: uppercase;
+
+    color: rgba(255,255,255,.7);
+}
+
+
+/* ---------- Arrow ---------- */
+
+.arrow {
+    flex-shrink: 0;
+
+    width: 24px;
+    height: 24px;
+
+    margin-left: 3rem;
+
+    border-right: 3px solid rgba(255,255,255,.7);
+    border-bottom: 3px solid rgba(255,255,255,.7);
+
+    transform: rotate(45deg);
+    transition: .35s;
+}
+
+details[open] .arrow {
+    transform: rotate(225deg);
+}
+
+
+/* ---------- Content ---------- */
+
+.week-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 5rem;
+
+    margin-top: 3rem;
+}
+
+.notes p {
+    margin-bottom: 1.5rem;
+
+    font-size: 1.15rem;
+    line-height: 1.9;
+
+    color: rgba(255,255,255,.82);
+}
+
+.week-content ul {
+    padding-left: 1.2rem;
+}
+
+.week-content li,
+.week-content a,
+.extra p {
+    line-height: 1.8;
+    color: rgba(255,255,255,.8);
+}
+
+.week-content a {
+    transition: .2s;
+}
+
+.week-content a:hover {
+    color: white;
+}
+
+.notes h4 {
+    margin: 2rem 0 .75rem;
+
+    font-family: "KumbhSans";
+    font-size: 1.2rem;
+    font-weight: 700;
+
+    color: rgba(255,255,255,.75);
+}
+
+.notes ul {
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+}
+
+.notes li {
+    margin-bottom: .5rem;
+}
+
+.notes code {
+    font-family: monospace;
+    font-size: .95em;
+
+    color: rgba(255,255,255,.9);
+}
+
+.notes pre {
+    margin: 1.5rem 0;
+    padding: 1rem;
+
+    overflow-x: auto;
+
+    background: rgba(255,255,255,.06);
+    border-left: 2px solid rgba(255,255,255,.25);
+}

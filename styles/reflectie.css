@@ -1,0 +1,55 @@
+body {
+    /* height: 100vh; */
+    width: 100vw;
+    background-image: url("/assets/images/blog-background.jpg");
+    /* filter: blur(2px); */
+    background-size: cover;
+    overflow-x: hidden;
+}
+
+
+
+main {
+    background: rgba(0, 0, 0, 0.39);
+    backdrop-filter: blur(10px);
+    margin: clamp(1rem, -1.154rem + 9.846vw, 5rem);
+    padding: 3rem 6rem;
+}
+
+h2 {
+    margin: 7rem 0rem 3rem;
+
+    color: rgba(255, 255, 255, 0.70);
+    /* font-family: "Kumbh Sans"; */
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+
+    position: relative;
+}
+
+h2::after {
+    content: "";
+    position: absolute;
+    left: -30%;
+    bottom: -1rem;
+
+    width: 100%;
+    height: 1px;
+    background: rgba(255,255,255,.70);
+}
+
+h2::before {
+    content: "";
+    position: absolute;
+
+    left: -3rem;
+    top: -.5rem;
+
+    width: 1px;
+    height:  300px;
+
+    background: rgba(255,255,255,.70);
+}

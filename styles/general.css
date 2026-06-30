@@ -210,3 +210,14 @@ ul {
     color: #ffffff;
     transform: translateY(-1px);
 }
+
+
+
+
+/* ACTIVE LINK: current page */
+.main-nav a.active,
+.main-nav a[aria-current="page"] {
+    color: #ffffff;
+    border-bottom-color: #ffffff; /* underline to show it's active */
+    font-weight: 600;
+}

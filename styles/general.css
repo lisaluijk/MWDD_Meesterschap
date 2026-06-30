@@ -1,315 +1,316 @@
-/* ==========================================================================
-   Fonts
-   ========================================================================== */
+    /* ==========================================================================
+    Custom properties
+    ========================================================================== */
+
+    :root {
+        /* Fonts */
+        --font-base: "Gotu", Helvetica, sans-serif;
+        --font-heading: "KumbhSans", Arial, sans-serif;
+
+        /* Colors */
+        --color-text: rgba(255, 255, 255, 0.80);
+        --color-text-muted: rgba(255, 255, 255, 0.7);
+        --color-link-hover: #ffffff;
+        --color-heading-border: rgba(255, 255, 255, 0.7);
+        --color-background-overlay: rgba(0, 0, 0, 0.4);
+
+        /* Layout */
+        --body-width: 100vw;
+        --header-padding-inline: 5rem;
+        --main-padding-block: 3rem;
+        --main-padding-inline: 2rem;
+
+        /* Buttons */
+        --button-font-size: 20px;
+        --button-border: 1.629px solid rgba(255, 255, 255, 0.60);
+        --button-bg: linear-gradient(
+                        90deg,
+                        rgba(255, 255, 255, 0.60) 0%,
+                        rgba(255, 255, 255, 0.24) 3.85%,
+                        rgba(255, 255, 255, 0.00) 51.92%,
+                        rgba(255, 255, 255, 0.24) 96.15%,
+                        rgba(255, 255, 255, 0.60) 100%
+                    ),
+                    radial-gradient(
+                        50% 50% at 50% 50%,
+                        rgba(226, 226, 226, 0.06) 1.92%,
+                        rgba(221, 221, 221, 0.18) 71.63%,
+                        rgba(211, 211, 211, 0.23) 88.46%
+                    );
+    }
+
+
+    /* ==========================================================================
+    Fonts
+    ========================================================================== */
+
+    @font-face {
+        font-family: "Gotu";
+        src: url("../assets/fonts/Gotu-Regular.ttf");
+    }
+
+    @font-face {
+        font-family: "KumbhSans";
+        src: url("../assets/fonts/KumbhSans-VariableFont_YOPQ\,wght.ttf");
+    }
+
+
+    /* ==========================================================================
+    Reset
+    ========================================================================== */
+
+    *,
+    *::before,
+    *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+
+    /* ==========================================================================
+    Base
+    ========================================================================== */
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        width: var(--body-width);
+        overflow-x: hidden;
+
+        font-family: var(--font-base);
+        color: var(--color-text);
+
+        background-image: url("/assets/images/blog-background.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center top;
+        background-attachment: fixed;
+    }
+
+    main {
+        margin-block: clamp(1rem, -1.154rem + 9.846vw, 10rem);
+        margin-inline: clamp(1rem, 5vw, 10rem);
+        padding: var(--main-padding-block) var(--main-padding-inline);
+
+        background: var(--color-background-overlay);
+        backdrop-filter: blur(10px);
+    }
+
 
-@font-face {
-    font-family: "Gotu";
-    src: url("../assets/fonts/Gotu-Regular.ttf");
-}
+    /* ==========================================================================
+    Typography
+    ========================================================================== */
 
-@font-face {
-    font-family: "KumbhSans";
-    src: url("../assets/fonts/KumbhSans-VariableFont_YOPQ\,wght.ttf");
-}
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: var(--font-heading);
+    }
 
+    h1 {
+        display: inline-block;
+        width: 100%;
+        position: relative;
+        right: -4rem;
 
-/* ==========================================================================
-   Reset
-   ========================================================================== */
+        padding-bottom: 2rem;
 
-*,
-*::before,
-*::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+        text-align: end;
+        text-transform: uppercase;
 
+        font-size: 75px;
+        font-weight: 400;
 
-/* ==========================================================================
-   Base
-   ========================================================================== */
+        color: var(--color-text-muted);
 
-html {
-    scroll-behavior: smooth;
-}
+        border-bottom: 1px solid var(--color-heading-border);
+    }
 
-body {
-    width: 100vw;
-    overflow-x: hidden;
+    h3 {
+        margin: 1rem 0;
 
-    font-family: "Gotu", Helvetica, sans-serif;
-    color: white;
+        font-size: 25px;
+        font-weight: 700;
+        text-transform: uppercase;
 
-    background-image: url("/assets/images/blog-background.jpg");
-    background-size: 100% auto;
-}
+        color: var(--color-text-muted);
+    }
 
-body {
-    width: 100vw;
-    overflow-x: hidden;
-
-    font-family: "Gotu", Helvetica, sans-serif;
-    color: white;
-
-    background-image: url("/assets/images/blog-background.jpg");
-    background-size: cover;         /* fills the viewport nicely */
-    background-repeat: no-repeat;
-    background-position: center top;
-    background-attachment: fixed;   /* makes the image stay put */
-}
-
-main {
-    margin-block: clamp(1rem, -1.154rem + 9.846vw, 10rem);
-    margin-inline: clamp(1rem, 5vw, 10rem);
-    padding: 3rem 2rem;
-
-    background: rgba(0, 0, 0, .39);
-    backdrop-filter: blur(10px);
-}
-
-
-/* ==========================================================================
-   Typography
-   ========================================================================== */
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-family: "KumbhSans", Arial, sans-serif;
-}
-
-h1 {
-    display: inline-block;
-    width: 100%;
-
-    position: relative;
-    right: -4rem;
-
-    padding-bottom: 2rem;
-
-    text-align: end;
-    text-transform: uppercase;
-
-    font-size: 75px;
-    font-weight: 400;
-
-    color: rgba(255, 255, 255, .7);
-
-    border-bottom: 1px solid rgba(255, 255, 255, .7);
-}
-
-h3 {
-    margin: 1rem 0;
-
-    font-size: 25px;
-    font-weight: 700;
-    text-transform: uppercase;
-
-    color: rgba(255, 255, 255, .7);
-}
-
-p {
-    line-height: 1.8;
-    color: rgba(255, 255, 255, .82);
-    margin-bottom: 1rem;
-}
-
-a {
-    color: rgba(255, 255, 255, .8);
-    transition: .2s;
-}
-
-a:hover {
-    color: white;
-}
-
-ul,
-ol {
-    padding-left: 1.5rem;
-}
-
-
-/* ==========================================================================
-   Shared Section Heading
-   ========================================================================== */
-
-.section-title {
-    margin: 7rem 0 3rem;
-
-    position: relative;
-
-    font-size: clamp(2.4rem, 5vw, 3.2rem);
-    font-weight: 700;
-    text-transform: uppercase;
-
-    color: rgba(255, 255, 255, .7);
-}
-
-.section-title::after {
-    content: "";
-
-    position: absolute;
-    left: -30%;
-    bottom: -1rem;
-
-    width: 100%;
-    height: 1px;
-
-    background: rgba(255, 255, 255, .7);
-}
-
-.section-title::before {
-    content: "";
-
-    position: absolute;
-    left: -3rem;
-    top: -.5rem;
-
-    width: 1px;
-    height: 300px;
-
-    background: rgba(255, 255, 255, .7);
-}
-
-
-/* ==========================================================================
-   Utility classes
-   ========================================================================== */
-
-.full {
-    grid-column: 1 / -1;
-}
-
-.reflection {
-    margin-top: 3rem;
-}
-
-
-.site-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1rem 5rem;
-    /* background: #4e4e4e;          */
-    backdrop-filter: blur(1px);
-}
-
-.site-header .logo img {
-    height: 5vh;
-}
-
-/* NAV LINKS */
-.main-nav {
-    display: flex;
-    gap: 2rem;
-    /* space between links */
-}
-
-.main-nav a {
-    color: rgba(255, 255, 255, 0.7);
-    font-family: "KumbhSans", sans-serif;
-    font-size: 1.5rem;
-    font-weight: 400;
-    text-transform: uppercase;
-    text-decoration: none;
-    letter-spacing: 0.08em;
-    transition: color 0.2s ease, transform 0.2s ease;
-}
-
-.main-nav a:hover,
-.main-nav a:focus {
-    color: #ffffff;
-    transform: translateY(-1px);
-}
-
-
-
-
-/* ACTIVE LINK: current page */
-.main-nav a.active,
-.main-nav a[aria-current="page"] {
-    color: #ffffff;
-    border-bottom-color: #ffffff;
-    /* underline to show it's active */
-    font-weight: 600;
-}
-
-.link-button {
-    display: inline-flex;
-    padding: 4px 19px;
-    justify-content: center;
-    align-items: center;
-    gap: 3.258px;
-
-    border-right: 1.629px solid rgba(255, 255, 255, 0.60);
-    border-left: 1.629px solid rgba(255, 255, 255, 0.60);
-    background: linear-gradient(90deg, rgba(255, 255, 255, 0.60) 0%, rgba(255, 255, 255, 0.24) 3.85%, rgba(255, 255, 255, 0.00) 51.92%, rgba(255, 255, 255, 0.24) 96.15%, rgba(255, 255, 255, 0.60) 100%), radial-gradient(50% 50% at 50% 50%, rgba(226, 226, 226, 0.06) 1.92%, rgba(221, 221, 221, 0.18) 71.63%, rgba(211, 211, 211, 0.23) 88.46%);
-
-
-    color: #FFF;
-    font-family: "KumbhSans";
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-}
-
-
-.project-links {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 1rem;
-    margin-block: 2rem;
-}
-
-
-.project-links {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 1rem;
-    margin-block: 2rem;
-}
-
-.link-button {
-    display: inline-flex;
-    padding: 4px 19px;
-    justify-content: center;
-    align-items: center;
-    gap: 3.258px;
-
-    border-right: 1.629px solid rgba(255, 255, 255, 0.60);
-    border-left: 1.629px solid rgba(255, 255, 255, 0.60);
-    background: linear-gradient(90deg, rgba(255, 255, 255, 0.60) 0%, rgba(255, 255, 255, 0.24) 3.85%, rgba(255, 255, 255, 0.00) 51.92%, rgba(255, 255, 255, 0.24) 96.15%, rgba(255, 255, 255, 0.60) 100%), radial-gradient(50% 50% at 50% 50%, rgba(226, 226, 226, 0.06) 1.92%, rgba(221, 221, 221, 0.18) 71.63%, rgba(211, 211, 211, 0.23) 88.46%);
-
-    color: #FFF;
-    font-family: "KumbhSans";
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-
-    text-decoration: none;      /* remove basic link styling */
-    cursor: pointer;
-    transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease;   /* smooth hover animation */
-}
-
-/* Arrow after the text */
-.link-button::after {
-    content: "→";
-    font-size: 18px;
-}
-
-/* Hover / keyboard focus state */
-.link-button:hover,
-.link-button:focus-visible {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.35);
-}
+    p {
+        line-height: 1.8;
+        color: var(--color-text);
+        margin-bottom: 1rem;
+    }
+
+    a {
+        color: var(--color-text);
+        transition: color 0.2s ease;
+    }
+
+    a:hover {
+        color: var(--color-link-hover);
+    }
+
+    ul,
+    ol {
+        padding-left: 1.5rem;
+    }
+
+
+    /* ==========================================================================
+    Shared Section Heading
+    ========================================================================== */
+
+    .section-title {
+        margin: 7rem 0 3rem;
+        position: relative;
+
+        font-size: clamp(2.4rem, 5vw, 3.2rem);
+        font-weight: 700;
+        text-transform: uppercase;
+
+        color: var(--color-text-muted);
+    }
+
+    .section-title::after {
+        content: "";
+        position: absolute;
+        left: -30%;
+        bottom: -1rem;
+
+        width: 100%;
+        height: 1px;
+
+        background: var(--color-heading-border);
+    }
+
+    .section-title::before {
+        content: "";
+        position: absolute;
+        left: -3rem;
+        top: -.5rem;
+
+        width: 1px;
+        height: 300px;
+
+        background: var(--color-heading-border);
+    }
+
+
+    /* ==========================================================================
+    Utility classes
+    ========================================================================== */
+
+    .full {
+        grid-column: 1 / -1;
+    }
+
+    .reflection {
+        margin-top: 3rem;
+    }
+
+
+    /* ==========================================================================
+    Header & Navigation
+    ========================================================================== */
+
+    .site-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem var(--header-padding-inline);
+        backdrop-filter: blur(1px);
+    }
+
+    .site-header .logo img {
+        height: 5vh;
+    }
+
+    /* NAV LINKS */
+    .main-nav {
+        display: flex;
+        gap: 2rem;
+    }
+
+    .main-nav a {
+        color: var(--color-text-muted);
+        font-family: var(--font-heading);
+        font-size: 1.5rem;
+        font-weight: 400;
+        text-transform: uppercase;
+        text-decoration: none;
+        letter-spacing: 0.08em;
+        transition: color 0.2s ease, transform 0.2s ease;
+    }
+
+    .main-nav a:hover,
+    .main-nav a:focus {
+        color: var(--color-link-hover);
+        transform: translateY(-1px);
+    }
+
+    /* ACTIVE LINK: current page */
+    .main-nav a.active,
+    .main-nav a[aria-current="page"] {
+        color: var(--color-link-hover);
+        border-bottom-color: var(--color-link-hover);
+        font-weight: 600;
+    }
+
+
+    /* ==========================================================================
+    Project links & buttons
+    ========================================================================== */
+
+    .project-links {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        margin-block: 2rem;
+    }
+
+    .link-button {
+        display: inline-flex;
+        padding: 4px 19px;
+        justify-content: center;
+        align-items: center;
+        gap: 3.258px;
+
+        border-right: var(--button-border);
+        border-left: var(--button-border);
+        background: var(--button-bg);
+
+        color: #FFF;
+        font-family: var(--font-heading);
+        font-size: var(--button-font-size);
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+
+        text-decoration: none;
+        cursor: pointer;
+        transition:
+            transform 0.2s ease,
+            box-shadow 0.2s ease;
+    }
+
+    /* Arrow after the text */
+    .link-button::after {
+        content: "→";
+        font-size: 18px;
+    }
+
+    /* Hover / keyboard focus state */
+    .link-button:hover,
+    .link-button:focus-visible {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 14px rgba(0, 0, 0, 0.35);
+    }

@@ -1,12 +1,5 @@
 /* ---------- Layout ---------- */
 
-body {
-    width: 100vw;
-    overflow-x: hidden;
-
-    background-image: url("/assets/images/blog-background.jpg");
-    background-size: cover;
-}
 
 main {
     margin: clamp(1rem, -1.154rem + 9.846vw, 5rem);

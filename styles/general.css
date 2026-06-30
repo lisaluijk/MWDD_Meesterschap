@@ -42,7 +42,21 @@ body {
     color: white;
 
     background-image: url("/assets/images/blog-background.jpg");
-    background-size: cover;
+    background-size: 100% auto;
+}
+
+body {
+    width: 100vw;
+    overflow-x: hidden;
+
+    font-family: "Gotu", Helvetica, sans-serif;
+    color: white;
+
+    background-image: url("/assets/images/blog-background.jpg");
+    background-size: cover;         /* fills the viewport nicely */
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-attachment: fixed;   /* makes the image stay put */
 }
 
 main {
